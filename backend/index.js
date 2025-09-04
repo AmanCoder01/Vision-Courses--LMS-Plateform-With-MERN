@@ -22,6 +22,12 @@ app.use(cors({
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
 }));
+
+app.options("*", cors({
+    origin: "https://vision-courses.vercel.app",
+    credentials: true,
+}));
+
 app.use("/api/auth", authRouter)
 app.use("/api/user", userRouter)
 app.use("/api/course", courseRouter)
