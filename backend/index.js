@@ -33,9 +33,17 @@ app.use("/api/review", reviewRouter)
 app.get("/", (req, res) => {
     res.send("Hello From Server")
 })
+// ✅ Connect DB first, then start server
+const startServer = async () => {
+    try {
+        await connectDb()
+        app.listen(port, () => {
+            console.log(`🚀 Server running on port ${port}`)
+        })
+    } catch (error) {
+        console.error("❌ Failed to connect to DB", error.message)
+        process.exit(1)
+    }
+}
 
-app.listen(port, () => {
-    console.log("Server Started")
-    connectDb()
-})
-
+startServer()
