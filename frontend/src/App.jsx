@@ -27,7 +27,8 @@ import SearchWithAi from './pages/SearchWithAi'
 import getAllReviews from './customHooks/getAllReviews'
 import PrivateRoute from './components/PrivateRoute'
 
-export const serverUrl = "http://localhost:8000"
+export const serverUrl = "https://vision-courses-server.vercel.app"
+// export const serverUrl = "http://localhost:8000"
 
 function App() {
 

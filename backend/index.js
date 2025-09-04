@@ -16,7 +16,8 @@ let app = express()
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    origin: "http://localhost:5173",  // frontend URL
+    origin: "https://vision-courses.vercel.app",  // frontend URL
+    // origin: "http://localhost:5173",  // frontend URL
     credentials: true,                // allow cookies
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
